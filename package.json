@@ -1,0 +1,33 @@
+{
+  "name": "no-more-for-loops",
+  "version": "0.1.0",
+  "description": "A micro-library for reducing manual for-loops.",
+  "main": "lib/no-more-for-loops.js",
+  "module": "lib/no-more-for-loops.mjs",
+  "jsnext:main": "lib/no-more-for-loops.mjs",
+  "types": "types/no-more-for-loops.d.ts",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "author": "FAL",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fal-works/no-more-for-loops"
+  },
+  "devDependencies": {
+    "rollup": "^0.53.0",
+    "rollup-plugin-typescript2": "^0.9.0",
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.3.0",
+    "uglify-es": "^3.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm-run-all rollup uglify:umd uglify:es",
+    "rollup": "rollup -c",
+    "uglify:umd": "uglifyjs ./lib/no-more-for-loops.js --compress --mangle --screw-ie8 --output ./lib/no-more-for-loops.min.js --comments",
+    "uglify:es": "uglifyjs ./lib/no-more-for-loops.mjs --compress --mangle --screw-ie8 --output ./lib/no-more-for-loops.min.mjs --comments --ecma 6"
+  }
+}
